@@ -1,0 +1,6 @@
+com/whweather/springboot/controller/WeatherController.class
+com/whweather/springboot/WeatherApplication.class
+com/whweather/springboot/model/iWeatherInfo.class
+com/whweather/springboot/model/OpenWeatherMap.class
+com/whweather/springboot/service/WeatherService.class
+com/whweather/springboot/model/Weather.class
