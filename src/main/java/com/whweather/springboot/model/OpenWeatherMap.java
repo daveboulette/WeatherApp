@@ -46,12 +46,11 @@ public class OpenWeatherMap implements iWeatherInfo {
 
                 if (resultObject instanceof JSONObject) {
                     JSONObject obj =(JSONObject)resultObject;
-                    String wind = obj.get("wind").toString();
                     
-                    windDirection = Double.parseDouble(wind.split(":")[1].split(",")[0]);
-                    windSpeed = Double.parseDouble(wind.split(":")[2].split("}")[0]);
+                    // grab the wind info from the json response
+                    windDirection = Double.parseDouble(((JSONObject)obj.get("wind")).get("deg").toString());
+                    windSpeed = Double.parseDouble(((JSONObject)obj.get("wind")).get("speed").toString());
                 }
-
             } 
             catch (Exception e) {
             	System.out.println(e.toString());

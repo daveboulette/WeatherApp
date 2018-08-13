@@ -3,9 +3,6 @@ package com.whweather.springboot.model;
 import java.util.Date;
 import java.util.HashMap;
 
-import org.springframework.context.event.ContextStartedEvent;
-import org.springframework.context.event.EventListener;
-
 public class DataCache 
 {
 	// cache the weather info and store it in a HashMap so lookups occur in O(n) time
@@ -41,8 +38,8 @@ public class DataCache
 		return zipWeather;
 	}
 	
-	@EventListener(ContextStartedEvent.class)
 	public void refreshCache() {
+		// clear out all saved values in the hashMap
 	    weatherCache = new HashMap<String,Weather>();
 	    System.out.println("The cache has been cleared.");
 	}

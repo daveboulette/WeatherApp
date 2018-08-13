@@ -17,7 +17,7 @@ public class WeatherApplication {
 
 		do
 		{
-		    // get their input as a String
+		    // get users input as a String
 		    String command = scanner.next();
 		    
 		    if (command.equals("clear"))
@@ -32,6 +32,7 @@ public class WeatherApplication {
 		    
 		} while (running);
 		
+		// close down the app
 		sp.stop();
 		sp.close();
 		scanner.close();

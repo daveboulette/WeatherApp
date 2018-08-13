@@ -27,7 +27,7 @@ public class WeatherControllerTest {
 	@MockBean
 	private WeatherService weatherService;
 
-	Weather mockWeather =  new Weather("90210",140.001,4.5,"1534101920517");
+	Weather mockWeather =  new Weather("89109",4.6,135.005,"1534127239091");
 
 	@Test
 	public void retrieveWind() throws Exception {
@@ -36,13 +36,13 @@ public class WeatherControllerTest {
 				weatherService.retrieveWind(Mockito.anyString())).thenReturn(mockWeather);
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-				"api/v1/wind/90210").accept(
+				"http://localhost:8080/api/v1/wind/89109").accept(
 				MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		System.out.println(result.getResponse());
-		String expected = "{\"zipCode\":\"90210\",\"wind\":\"{\\\"deg\\\":140.001,\\\"speed\\\":4.5}\",\"lastUpdated\":1534101920517}";
+		String expected = "{\"zipCode\":\"89109\",\"windDirection\":135.005,\"windSpeed\":4.6,\"lastUpdated\":1534127239091}";
 
 		JSONAssert.assertEquals(expected, result.getResponse()
 				.getContentAsString(), false);
