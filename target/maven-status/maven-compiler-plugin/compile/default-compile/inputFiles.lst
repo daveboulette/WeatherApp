@@ -1,7 +1,9 @@
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/model/Weather.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/model/iWeatherInfo.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/model/OpenWeatherMap.java
+/Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/model/BadZip.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/controller/WeatherController.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/service/iWeatherService.java
+/Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/model/DataCache.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/service/WeatherService.java
 /Users/davidboulette/Documents/sandbox/Job Search/WH/WeatherApp/src/main/java/com/whweather/springboot/WeatherApplication.java
