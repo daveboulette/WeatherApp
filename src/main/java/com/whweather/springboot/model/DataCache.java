@@ -13,7 +13,7 @@ public class DataCache
 		weatherCache = new HashMap<String,Weather>();
 	}
 	
-	public Weather getWeather(String zipCode)
+	public synchronized Weather getWeather(String zipCode)
 	{
 		Date now = new Date();
 		
@@ -28,7 +28,6 @@ public class DataCache
 			
 			// store it in the cache for next time
 			weatherCache.put(zipCode, weather);
-			
 		}
 	
 		// if the data is older then 15 minutes refresh it

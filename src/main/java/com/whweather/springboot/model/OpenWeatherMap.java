@@ -1,7 +1,6 @@
 package com.whweather.springboot.model;
 
 import java.io.IOException;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -34,6 +33,7 @@ public class OpenWeatherMap implements iWeatherInfo {
 
 		Object resultObject=null;
 		
+		// grab the weather info from from url
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
             HttpGet request = new HttpGet(url);
             
@@ -47,7 +47,7 @@ public class OpenWeatherMap implements iWeatherInfo {
                 if (resultObject instanceof JSONObject) {
                     JSONObject obj =(JSONObject)resultObject;
                     
-                    // grab the wind info from the json response
+                    // pull out wind info from the json response
                     windDirection = Double.parseDouble(((JSONObject)obj.get("wind")).get("deg").toString());
                     windSpeed = Double.parseDouble(((JSONObject)obj.get("wind")).get("speed").toString());
                 }
