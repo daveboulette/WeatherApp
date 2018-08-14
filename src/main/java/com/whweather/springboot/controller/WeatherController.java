@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import com.whweather.springboot.model.BadZip;
 import com.whweather.springboot.model.Weather;
 import com.whweather.springboot.service.iWeatherService;
 
@@ -17,10 +18,10 @@ public class WeatherController {
 	private iWeatherService weatherService;
 	
 	@GetMapping("api/v1/wind/{zipCode}")
-	public Weather retrieveWind(@PathVariable String zipCode) {
-		// return null if the zip is invalid
+	public Weather retrieveWind(@PathVariable String zipCode) throws BadZip {
+		// if zip is bad throw a badzip error
 		if (!validZip(zipCode)) {
-			return null;
+			throw new BadZip("Please enter a valid zipcode.");
         }
 		
 		return weatherService.retrieveWind(zipCode);
